@@ -82,14 +82,14 @@ async def async_setup_entry(
 
     entities: list[SensorEntity] = []
 
-    for device in config_entry.runtime_data.data.devices:
-        entities.append(
-            SenseDevicePowerSensor(device, sense_monitor_id, realtime_coordinator)
-        )
-        entities.extend(
-            SenseDeviceEnergySensor(device, scale, trends_coordinator, sense_monitor_id)
-            for scale in TREND_SCALES
-        )
+#    for device in config_entry.runtime_data.data.devices:
+#       entities.append(
+#            SenseDevicePowerSensor(device, sense_monitor_id, realtime_coordinator)
+#        )
+#        entities.extend(
+#            SenseDeviceEnergySensor(device, scale, trends_coordinator, sense_monitor_id)
+#            for scale in TREND_SCALES
+#        )
 
     for variant_id, variant_name in SENSOR_VARIANTS:
         entities.append(
