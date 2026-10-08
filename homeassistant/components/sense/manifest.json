@@ -1,5 +1,6 @@
 {
   "domain": "sense",
+  "version": "1.0.0",
   "name": "Sense",
   "codeowners": ["@kbickar"],
   "config_flow": true,
