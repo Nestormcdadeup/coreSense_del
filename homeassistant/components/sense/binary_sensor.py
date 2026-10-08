@@ -30,11 +30,12 @@ async def async_setup_entry(
     sense_monitor_id = config_entry.runtime_data.data.sense_monitor_id
     realtime_coordinator = config_entry.runtime_data.rt
 
-    devices = [
-        SenseBinarySensor(device, realtime_coordinator, sense_monitor_id)
-        for device in config_entry.runtime_data.data.devices
-    ]
-
+#    devices = [
+#        SenseBinarySensor(device, realtime_coordinator, sense_monitor_id)
+#        for device in config_entry.runtime_data.data.devices
+#    ]
+    devices = []
+    
     await _migrate_old_unique_ids(hass, devices)
 
     async_add_entities(devices)
